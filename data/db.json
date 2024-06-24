@@ -1,0 +1,84 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "description": "Salary",
+      "amount": 5000,
+      "type": "income",
+      "category": "Job",
+      "date": "2024-06-01"
+    },
+    {
+      "id": 2,
+      "description": "Groceries",
+      "amount": -150,
+      "type": "expense",
+      "category": "Food",
+      "date": "2024-06-02"
+    },
+    {
+      "id": 3,
+      "description": "Electricity Bill",
+      "amount": -100,
+      "type": "expense",
+      "category": "Utilities",
+      "date": "2024-06-05"
+    },
+    {
+      "id": 4,
+      "description": "Freelance Project",
+      "amount": 1200,
+      "type": "income",
+      "category": "Freelance",
+      "date": "2024-06-07"
+    },
+    {
+      "id": 5,
+      "description": "Dining Out",
+      "amount": -60,
+      "type": "expense",
+      "category": "Entertainment",
+      "date": "2024-06-10"
+    },
+    {
+      "id": 6,
+      "description": "Car Maintenance",
+      "amount": -250,
+      "type": "expense",
+      "category": "Transport",
+      "date": "2024-06-12"
+    },
+    {
+      "id": 7,
+      "description": "Stock Dividend",
+      "amount": 300,
+      "type": "income",
+      "category": "Investment",
+      "date": "2024-06-15"
+    },
+    {
+      "id": 8,
+      "description": "Internet Bill",
+      "amount": -50,
+      "type": "expense",
+      "category": "Utilities",
+      "date": "2024-06-18"
+    },
+    {
+      "id": 9,
+      "description": "Gym Membership",
+      "amount": -40,
+      "type": "expense",
+      "category": "Health",
+      "date": "2024-06-20"
+    },
+    {
+      "id": 10,
+      "description": "Book Sale",
+      "amount": 20,
+      "type": "income",
+      "category": "Miscellaneous",
+      "date": "2024-06-22"
+    }
+  ]
+}
