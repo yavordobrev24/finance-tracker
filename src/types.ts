@@ -6,3 +6,10 @@ export type Transaction = {
   category: string
   date: string
 }
+export type TransactionFormType = {
+  description: string
+  amount: string
+  type: string
+  category: string
+  date: string
+}
