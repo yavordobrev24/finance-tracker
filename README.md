@@ -16,7 +16,7 @@ To run the Finance Tracker App locally, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/yavordobrev24/finance-tracker.git
    cd finance-tracker
    ```
 
