@@ -1,6 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit'
-import { Transaction } from '../../types'
 import { AsyncThunk, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { Transaction, TransactionFormType } from '../../types'
 import { PayloadAction } from '@reduxjs/toolkit/react'
 
 type TransactionsState = {
@@ -51,5 +50,29 @@ export const fetchTransactions: AsyncThunk<Transaction[], void, {}> =
     const data: Transaction[] = await response.json()
     return data
   })
+export const addTransaction: AsyncThunk<
+  Transaction[],
+  TransactionFormType,
+  {}
+> = createAsyncThunk(
+  'transactions/addTransaction',
+  async (values: TransactionFormType) => {
+    const response = await fetch('http://localhost:3000/transactions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        description: values.description,
+        amount: Number(values.amount),
+        type: values.type,
+        category: values.category,
+        date: values.date,
+      }),
+    })
+    const data = await response.json()
+    return data
+  }
+)
 export const { changeCategory } = transactionsSlice.actions
 export default transactionsSlice.reducer
