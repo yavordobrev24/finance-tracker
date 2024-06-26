@@ -8,7 +8,7 @@ type TransactionsState = {
   category: string
 }
 
-const initialState: TransactionsState = {
+export const initialState: TransactionsState = {
   transactions: [],
   filteredTransactions: [],
   category: 'All',
