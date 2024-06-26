@@ -1,30 +1,52 @@
-# React + TypeScript + Vite
+# Finance Tracker App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Finance Tracker App is a web application designed to help users manage their finances effectively. It allows users to track their income, expenses, and overall financial health through a user-friendly interface.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Transaction Management**: Add and delete transactions with ease.
+- **Filtering**: View transactions based on categories, dates, and types.
+- **Dashboard**: Visualize financial summaries and trends through charts and graphs.
+- **Responsive Design**: Ensure usability across various devices and screen sizes.
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+To run the Finance Tracker App locally, follow these steps:
 
-- Configure the top-level `parserOptions` property like this:
+1. Clone the repository:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+   ```bash
+   git clone <repository-url>
+   cd finance-tracker
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Start JSON Server for mock API:
+
+   ```bash
+   npm run json-server
+   ```
+
+5. Open the app in your browser:
+   ```
+   http://localhost:5173
+   ```
+
+## Testing
+
+Run tests using the following command:
+
+```bash
+npm run test
 ```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
