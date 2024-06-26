@@ -41,7 +41,34 @@ const transactionsSlice = createSlice({
           )
       }
     )
+    builder.addCase(
+      deleteTransaction.fulfilled,
+      (state, action: PayloadAction<number>) => {
+        console.log(action.payload)
+        state.transactions = [
+          ...state.transactions.filter(
+            (transaction) => transaction.id != action.payload
+          ),
+        ]
 
+        const transactionCategory = state.filteredTransactions.find(
+          (transaction) => transaction.id == action.payload
+        )?.category
+        const sameCategoryTransactions = state.filteredTransactions.filter(
+          (transaction) => transaction.category == transactionCategory
+        )
+        if (sameCategoryTransactions.length == 1) {
+          state.category == 'All'
+          state.filteredTransactions = state.transactions
+        } else {
+          state.filteredTransactions = [
+            ...state.filteredTransactions.filter(
+              (transaction) => transaction.id != action.payload
+            ),
+          ]
+        }
+      }
+    )
   },
 })
 export const fetchTransactions: AsyncThunk<Transaction[], void, {}> =
@@ -74,5 +101,15 @@ export const addTransaction: AsyncThunk<
     return data
   }
 )
+export const deleteTransaction: AsyncThunk<number, number, {}> =
+  createAsyncThunk(
+    'transactions/deleteTransaction',
+    async (transactionId: number) => {
+      await fetch(`http://localhost:3000/transactions/${transactionId}`, {
+        method: 'DELETE',
+      })
+      return transactionId
+    }
+  )
 export const { changeCategory } = transactionsSlice.actions
 export default transactionsSlice.reducer
